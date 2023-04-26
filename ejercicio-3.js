@@ -18,7 +18,7 @@ console.log(`Un minuto tiene ${segundosEnMinuto} segundos, hora tiene ${minutosE
 
 
 // "Sintaxis vieja"
-const userInfo = 'User info: ' + name + ' ' + surname + ' ' + telephone;
+//const userInfo = 'User info: ' + name + ' ' + surname + ' ' + telephone;
 
 // "Nueva sintaxis"
-const userInfo = `User info: ${name} ${surname} ${telephone}`;
+//const userInfo = `User info: ${name} ${surname} ${telephone}`;
