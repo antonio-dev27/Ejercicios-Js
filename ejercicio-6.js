@@ -119,7 +119,8 @@ switch (dia) {
 
 
 
-
+// punto numero 4 del ejercicio:  código que dados tres números, evalúe cual es el número mayor.
+//Imprimalos en consola ordenados.
 
 let a = 1;
 let b = 2;
@@ -140,3 +141,16 @@ if (a > b && b > c) {
 } else {
   console.log("Los números son iguales.");
 }
+
+
+// punto 5 Haga un código que evalúe si un número es par o impar.
+
+let numero = 4; // aquí se asigna el número 4 a la variable numero
+
+// Verifica si el número es par o impar y lo imprime en consola
+if (numero % 2 === 0) {
+  console.log(`${numero} es un número par.`);
+} else {
+  console.log(`${numero} es un número impar.`);
+
+
