@@ -153,4 +153,30 @@ if (numero % 2 === 0) {
 } else {
   console.log(`${numero} es un número impar.`);
 
+  const precioPorDocena = 60000;
+}
 
+// punto 6 del ejercicio valor descuento segun la cantidad de docenas compradas 
+
+  // Solicitar la cantidad de docenas a comprar
+  let  cantidadDeDocenas = 12
+  
+  let descuento = 0;
+  
+  if (cantidadDeDocenas >= 10) {
+    descuento = 0.2;
+  } else if (cantidadDeDocenas >= 5) {
+    descuento = 0.15;
+  } else if (cantidadDeDocenas > 1) {
+    descuento = 0.1;
+  }
+  
+  const precioSinDescuento = cantidadDeDocenas * precioPorDocena;
+  const montoDelDescuento = precioSinDescuento * descuento;
+  const precioConDescuento = precioSinDescuento - montoDelDescuento;
+  
+  console.log(`Cantidad de docenas: ${cantidadDeDocenas}`);
+  console.log(`Descuento: ${descuento * 100}%`);
+  console.log(`Precio sin descuento: $${precioSinDescuento}`);
+  console.log(`Monto del descuento: $${montoDelDescuento}`);
+  console.log(`Precio con descuento: $${precioConDescuento}`);
