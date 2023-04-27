@@ -1,7 +1,6 @@
-let i =20;
-
-for(let i = 2; i < 19; i++){
-	if(i % 2 === 0) {
-		console.log(i);
-	}
+contador = 1;
+numero = 7;
+while (contador <= 10) {
+  console.log(`${numero} x ${contador} = ${numero * contador}`);
+  contador++;
 }

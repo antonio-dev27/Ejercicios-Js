@@ -57,5 +57,24 @@ for(let i = 2; i < 19; i++){
 }
 
 
+// ejercicio 5 Realice un código que sume los números del 1 al 5 e imprima el resultado.
+
+let resultado = 0;
+
+for (let f = 1; f <= 5; f++) {
+    resultado +=f;
+    console.log(`resultado es ${resultado}`)
+}
+
+
+// ejercicio 6 Haga un código con while que imprima la tabla de multiplicar del 7
+
+contador = 1;
+numero = 7;
+while (contador <= 10) {
+  console.log(`${numero} x ${contador} = ${numero * contador}`);
+  contador++;
+}
+
 
 
