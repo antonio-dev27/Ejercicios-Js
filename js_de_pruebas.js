@@ -1,6 +1,6 @@
-contador = 1;
-numero = 7;
-while (contador <= 10) {
-  console.log(`${numero} x ${contador} = ${numero * contador}`);
-  contador++;
+let numeros=[];
+for(let i=1; i<101; i++){
+    numeros.push(i)
+    
 }
+console.log(numeros)
