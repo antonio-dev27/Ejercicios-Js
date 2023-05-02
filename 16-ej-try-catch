@@ -65,15 +65,15 @@ try {
 
 function manejo_de_errores(arreglo_de_numeros) {
     try {
-        for (let i = 0; i < arreglo_de_numeros.length; i++) { 
+        for (let i = 0; i < arreglo_de_numeros.length; i++) {
 
-            console.log(arreglo_de_numeros[i]);  
+            console.log(arreglo_de_numeros[i]);
 
             if (isNaN(arreglo_de_numeros[i])) {
                 throw new Error("Cuidado! No se reciben datos no numéricos");
             }
             console.log(arreglo_de_numeros[i]);
-            
+
         }
     } catch (error) {
         console.log(error);
@@ -82,7 +82,7 @@ function manejo_de_errores(arreglo_de_numeros) {
     }
 }
 
-a = [1,2,3,4,"y",5]
+a = [1, 2, 3, 4, "y", 5]
 manejo_de_errores(a);
 
 
@@ -91,8 +91,45 @@ manejo_de_errores(a);
 
 //Realice un código que realice una calculadora científica con las siguientes operaciones: a. Suma b. Resta c. Multiplicación d. División. e. Potencia. f. Raíz cuadrada. Que tenga manejos de errores para las operaciones teniendo en cuenta que: -La división por cero no es posible. -La calculadora solo acepta entradas numéricas. -No es posible la raíz cuadrada de números negativos.
 
-
-
-
-
-
+function calculadora(num1, num2, operador) {
+    try {
+      if (isNaN(num1) || isNaN(num2)) {
+        throw new Error("Solo se aceptan números");//excepción con `throw`
+      }
+  
+      switch(operador) {
+        case '+':
+          return num1 + num2;
+        case '-':
+          return num1 - num2;
+        case '*':
+          return num1 * num2;
+        case '/':
+          if (num2 === 0) {
+            throw new Error("No se puede dividir por cero");
+          } else {
+            return num1 / num2;
+          }
+        case '^':
+          return Math.pow(num1, num2);
+        case '√':
+           if (num1<0){
+            throw new Error (" No es posible la raíz cuadrada de números negativos.");
+           } else{
+          return Math.sqrt(num1);
+           }
+        default:
+          throw new SyntaxError();
+      }
+    } catch(error) {
+      return error;
+    }
+  }
+  
+  
+  console.log(calculadora(-5, 3, "√")); 
+  console.log(calculadora(45, 0, "/")); 
+  console.log(calculadora(5, 2,"+"));
+  console.log(calculadora(5, 2,"^"));
+  console.log(calculadora(5, 2,""));
+  console.log(calculadora(5, "f","^"));
