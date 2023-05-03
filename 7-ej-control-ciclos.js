@@ -48,11 +48,11 @@ while(i) {
 
 // ejercicio 4 Imprima los números pares. 
 
-let i = 18;
+let j = 18;
 
-for(let i = 2; i < 19; i++){
-	if(i % 2 === 0) {
-		console.log(i);
+for(let j = 2; j < 19; j++){
+	if(j % 2 === 0) {
+		console.log(j);
 	}
 }
 

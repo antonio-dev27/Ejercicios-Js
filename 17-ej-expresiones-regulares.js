@@ -52,3 +52,47 @@ let cadena =
 let expReg = new RegExp("ipsum", "i");
 console.log(expReg.test(cadena)); //devuelve un false o un true dependiendo si se cumple la expresión regular
 console.log(expReg.exec(cadena)); //devuelve un arreglo con más informacion sobre la expresion
+
+
+
+
+//Según lo anterior haga un código que busque dentro del arreglo [edificio, perla, estrella, pescado, salero, biblioteca, guitarra, dinero, música] las palabras que cumpla la siguiente condicion: a. Que empiece por la letra A. Para las palabras que empiezan por el nombre a se debe imprimir el siguiente mensaje: “La palabra palabra es un sustantivo femenino” Para el resto de palabras debe imprimir el mensaje: “La palabra palabra es un sustantivo masculino” 
+
+const palabrasSustativos = ["edificio", "perla", "estrella", "pescado", "salero", "biblioteca", "guitarra", "dinero", "música"];
+
+palabrasSustativos.forEach(function(palabra){
+
+    let condicion = /^(\w).+(a)$/;
+
+    if(condicion.test(palabra)){
+        console.log(`La palabra: *${palabra}* es un sustantivo femenino`);
+        return true;
+    }
+    else{
+        console.log(`La palabra: *${palabra}* es un sustantivo masculino`);
+        return false;
+    }
+});
+
+
+//Por medio de expresiones regulares determine si una cadena de texto dada es un correo teniendo en cuenta las siguientes condiciones: a. Debe tener @  b. Debe tener .com
+
+function validEmail(){
+
+  const correo = "antonio77_jaac@gmail.com";
+
+  let validarEmail =  /^\w([._-]?\w)+@\w+(.com)$/;
+
+
+  if(validarEmail.test(correo)){
+  console.log("El correo es correcto");
+  return true;
+  }
+  else{
+  console.log("Correo incorrecto");
+  return false;
+  }
+
+};
+
+validEmail();
