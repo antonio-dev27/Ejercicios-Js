@@ -1,42 +1,43 @@
-function calculadora(num1, num2, operador) {
-  try {
-    if (isNaN(num1) || isNaN(num2)) {
-      throw new Error("Solo se aceptan números");//excepción con `throw`
-    }
+let usuarios = [
+    {
+      nombre: "Enzo",
+      apellido: "Perez",
+      correo: "enzope@gmail.com",
+      telefono: 1234567,
+      nacionalidad: "argentino",
+    },
+    {
+      nombre: "Sergio",
+      apellido: "Ramos",
+      correo: "sramos@gmail.com",
+      telefono: 7654321,
+      nacionalidad: "español",
+    },
+    {
+      nombre: "Martin",
+      apellido: "Demichellis",
+      correo: "Mishu@gmail.com",
+      telefono: 2468101,
+      nacionalidad: "argentino",
+    },
+    {
+      nombre: "Mateo",
+      apellido: "Retegui",
+      correo: "argentano@gmail.com",
+      telefono: 9632587,
+      nacionalidad: "italiano",
+    },
+    {
+      nombre: "Karim",
+      apellido: "Benzema",
+      correo: "gatoblanco@gmail.com",
+      telefono: 8524679,
+      nacionalidad: "frances",
+    },
+  ];
+  
+  usuarios.forEach((e, i) => {
+    console.log(JSON.stringify(e));
+    console.log(usuarios[i]);
+  });
 
-    switch(operador) {
-      case '+':
-        return num1 + num2;
-      case '-':
-        return num1 - num2;
-      case '*':
-        return num1 * num2;
-      case '/':
-        if (num2 === 0) {
-          throw new Error("No se puede dividir por cero");
-        } else {
-          return num1 / num2;
-        }
-      case '^':
-        return Math.pow(num1, num2);
-      case '√':
-         if (num1<0){
-          throw new Error (" No es posible la raíz cuadrada de números negativos.");
-         } else{
-        return Math.sqrt(num1);
-         }
-      default:
-        throw new SyntaxError();
-    }
-  } catch(error) {
-    return error;
-  }
-}
-
-
-console.log(calculadora(-5, 3, "√")); 
-console.log(calculadora(45, 0, "/")); 
-console.log(calculadora(5, 2,"+"));
-console.log(calculadora(5, 2,"^"));
-console.log(calculadora(5, 2,""));
-console.log(calculadora(5, "f","^"));
