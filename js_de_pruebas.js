@@ -1,43 +1,41 @@
-let usuarios = [
+let peliculas = `{
+  "peliculas": [
     {
-      nombre: "Enzo",
-      apellido: "Perez",
-      correo: "enzope@gmail.com",
-      telefono: 1234567,
-      nacionalidad: "argentino",
+      "nombre": "El secreto de sus ojos",
+      "anio": "2009",
+      "duracion": "129 min",
+      "director": "Juan José Campanella"
     },
     {
-      nombre: "Sergio",
-      apellido: "Ramos",
-      correo: "sramos@gmail.com",
-      telefono: 7654321,
-      nacionalidad: "español",
+      "nombre": "Relatos salvajes",
+      "anio": "2014",
+      "duracion": "122 min",
+      "director": "Damián Szifron"
     },
     {
-      nombre: "Martin",
-      apellido: "Demichellis",
-      correo: "Mishu@gmail.com",
-      telefono: 2468101,
-      nacionalidad: "argentino",
+      "nombre": "La historia oficial",
+      "anio": "1985",
+      "duracion": "152 min",
+      "director": "Luis Puenzo"
     },
     {
-      nombre: "Mateo",
-      apellido: "Retegui",
-      correo: "argentano@gmail.com",
-      telefono: 9632587,
-      nacionalidad: "italiano",
+      "nombre": "Nueve Reinas ",
+      "anio": "2000",
+      "duracion": "116 minutos",
+      "director": "Fabián Bielinsky."
     },
     {
-      nombre: "Karim",
-      apellido: "Benzema",
-      correo: "gatoblanco@gmail.com",
-      telefono: 8524679,
-      nacionalidad: "frances",
-    },
-  ];
-  
-  usuarios.forEach((e, i) => {
-    console.log(JSON.stringify(e));
-    console.log(usuarios[i]);
-  });
+      "nombre": "El aura",
+      "anio": "2005",
+      "duracion": "130 min",
+      "director": "Fabián Bielinsky"
+    }
+  ]
+}`;
+
+let listaPeliculas = JSON.parse(peliculas);
+console.log(listaPeliculas);
+for (let i = 0; i < listaPeliculas.peliculas.length; i++) {
+  console.log(listaPeliculas.peliculas[i]);
+}
 
