@@ -11,6 +11,10 @@ ajax.addEventListener("readystatechange", (e) => {
     if (ajax.status >= 200 && ajax.status < 300) { //Si la respuesta es satisfactoria
         let json = JSON.parse(ajax.responseText); //Convierte la respuesta Ajax en un objeto
 
+        json.forEach(object => {
+            console.log(object.name, object.username, object.email);
+            });
+
         for (const key in json) { //recorre el objeto
             console.log(`Llave: ${key}, Valor: ${json[key]}`)
             const $li = document.createElement("li"); //Crea el elemento li 
@@ -22,9 +26,47 @@ ajax.addEventListener("readystatechange", (e) => {
         let message = ajax.statusText || "Ocurrió un error";
         $lista.innerHTML = `Error ${ajax.status}: ${message}`;
     }
+
+
+    console.log("...............Respuesta.....................")
+    console.log(ajax.responseText)
+
+    console.log("...............URL.......................")
+    console.log(`La URL de la peticion es: ${ajax.responseURL}`)
+
+    console.log("...........Estado Peticion.................")
+    console.log(`El estado de la peticion es: ${ajax.readyState}`)
+
+    switch (ajax.readyState) {
+        case 1:
+          console.log("Cargando petición");
+          break;
+        case 2:
+          console.log("Petición cargada");
+          break;
+        case 3:
+          console.log("responseText tiene datos parciales");
+          break;
+        case 4:
+          console.log("¡Completado!");
+          break;
+      }
+
+    console.log("...............Estado Peticion.......................")
+    console.log(`Estado de respuesta HTTP: ${ajax.status}`)
+
+    if (ajax.status === 200){
+        console.log("respuesta correcta")
+    }else if(ajax.status === 404){
+        console.log("no encontrado.")
+    }else if (ajax.status === 505){
+        console.log("error interno del servidor")
+    }else{
+        console.log("error desconocido")
+    }
 });
 
 /*Abre la petición con el método GET.*/
-ajax.open("GET", "https://jsonplaceholder.typicode.com/posts/26");
+ajax.open("GET", "https://jsonplaceholder.typicode.com/comments/63");
 /*envia la peticioN*/
 ajax.send();

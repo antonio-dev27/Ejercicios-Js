@@ -1,16 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ajax</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>API REST</title>
 </head>
 <body>
-    <h1>Ajax</h1>
-    <h2>Datos JSON</h2>
-    <p>Datos traidos del JSON <a target="_blank" href="https://jsonplaceholder.typicode.com/posts/26">jsonplaceholder</a></p>
-    <ol id="lista"></ol>
-    <script src="ajaxDOM.js"></script>
+    <h1>Formulario de contacto</h1>
+    <form class="form">
+        <input type="text" name="name" placeholder="Nombre" required>
+        <input type="email" name="email" placeholder="Email" required>
+        <input type="text" name="subject" placeholder="Asunto" required>
+        <textarea name="comments" cols="50" rows="5" placeholder="Comentarios" required></textarea>
+        <input type="submit" value="Enviar">
+        <div class="contact-form-response none">
+          <p>Los datos han sido enviados</p>
+        </div>
+    </form>
+  <script src="25-ej-api.js"></script>
 </body>
+
 </html>
